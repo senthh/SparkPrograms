@@ -4,7 +4,11 @@ object Broad_Cast {
 
   def main(args: Array[String]): Unit = {
 
-    val spark = SparkSession.builder().appName("BroadCast").master("local[*]").getOrCreate()
+    val spark = SparkSession.builder()
+                .appName("BroadCast")
+                .master("local[*]")
+                .getOrCreate()
+    spark.sparkContext.setLogLevel("DEBUG")
     val states = Map(("NY","New York"),("IL","Illinois"),("CA","California"))
     val bStates = spark.sparkContext.broadcast(states)
     val data = Seq(
