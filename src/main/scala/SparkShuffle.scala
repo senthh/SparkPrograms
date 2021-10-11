@@ -5,7 +5,6 @@ object SparkShuffle {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
       .appName("SparkShuffle")
-      .master("local[*]")
       .getOrCreate()
     val tb1 = args(0)
     val tb2 = args(1)
