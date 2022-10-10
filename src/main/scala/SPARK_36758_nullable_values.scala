@@ -14,7 +14,7 @@ object SPARK_36758_nullable_values {
       .option("password", "")
       .option("driver", "com.mysql.cj.jdbc.Driver")
       .option("url", "jdbc:mysql://localhost:3306/Test_DB")
-      .option("dbtable", "Persons")
+      .option("dbtable", "timestamp_test")
       .load()
     df.printSchema()
     //df.show()

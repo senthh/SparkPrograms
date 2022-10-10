@@ -125,6 +125,9 @@ object Union_Sample {
     var df = spark.createDataFrame(data).toDF("date", "id")
 
     df = df.union(df)
+    df = df.filter(df("id") === 101)
+    // df.explain(cost = true)
+    /*
     df = df.union(df)
     df = df.union(df)
     df = df.union(df)
@@ -134,6 +137,7 @@ object Union_Sample {
     df = df.union(df)
     df = df.union(df)
     println(df.groupBy("id").count())
+    */
     //println(df.count())
   }
 }
